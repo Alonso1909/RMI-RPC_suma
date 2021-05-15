@@ -1,16 +1,20 @@
-
 package rmi_cliente_servidor;
 
 import java.rmi.Naming;
+import java.rmi.RemoteException;
 import javax.swing.JOptionPane;
+/**
+ *
+ * @author VictorA
+ */
 
 public class Cliente {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws RemoteException{
         String x="", y="";
         
         try{
-            Suma s =  (Suma) Naming.lookup("//:192.168.8.7/suma");
+            Suma s = (Suma) Naming.lookup("//85.187.158.121:1099/Suma"); 
             
             while(true){
                 String menu = JOptionPane.showInputDialog(null, "Suma de dos numeros\n"
